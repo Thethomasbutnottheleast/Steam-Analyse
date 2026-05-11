@@ -38,3 +38,5 @@ df_final = genres_dummies_clean[is_game & ~(weak_hybrid)].copy()
 
 ## Final dataset
 df_non_game = data.loc[df_final.index]
+df_non_game.to_csv("nongames.csv", index=False)
+print("Location:", os.path.abspath("nongames.csv"))

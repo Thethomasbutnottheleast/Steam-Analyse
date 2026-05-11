@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.io as pio
 import plotly.express as px
-pio.renderers.default = "browser"
 
 def calculate_mca_adjustment(lambdas, q):
     threshold = 1 / q

@@ -104,7 +104,7 @@ def plot_eta2_variables(eta2_df, dim_x=0, dim_y=1, title="Variables representati
     plt.show()
     
 
-def plot_eta2_3d(eta2_df, dim_x=0, dim_y=1, dim_z=2):
+def plot_eta2_3d(eta2_df, dim_x=0, dim_y=1, dim_z=2,write=False, name=None):
     # Build plotting dataframe
     df_plot = pd.DataFrame({
         "Genre": eta2_df.columns,
@@ -135,6 +135,12 @@ def plot_eta2_3d(eta2_df, dim_x=0, dim_y=1, dim_z=2):
     )
 
     fig.show()
+    if write:
+        fig.write_html(
+            f"{name}.html",
+            include_plotlyjs="cdn",
+            full_html=True
+        )
 
 def show_contrib_cos2_mod(mca, data, top, top_n):
     """
@@ -284,7 +290,7 @@ def plot_mca_coords(ind_coords=None, active_coords=None, supp_coords=None,
     plt.tight_layout()
     plt.show()
 
-def plot3D_ind_var_mca(mca, data, dim0=0, dim1=1, dim2=2):
+def plot3D_ind_var_mca(mca, data, dim0=0, dim1=1, dim2=2, write = False, name=None):
     
     # --- Individual coordinates ---
     df_ind = mca.row_coordinates(data).copy()
@@ -405,3 +411,10 @@ def plot3D_ind_var_mca(mca, data, dim0=0, dim1=1, dim2=2):
     )
     
     fig.show()
+    if write:
+        fig.write_html(
+            f"{name}.html",
+            include_plotlyjs="cdn",
+            full_html=True
+        )
+    

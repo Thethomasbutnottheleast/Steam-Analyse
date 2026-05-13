@@ -19,3 +19,7 @@ statistiques ?
 — Comment la structure du marché évolue-t-elle avec l’année de sortie ?
 On pourra, au besoin, appliquer des transformations aux données quantitatives, voire les transformer en variables
 catégorielles pour faciliter leur traitement. Ces choix devront être motivés.
+
+Nous avons analysé la base de données steam trouvable sur ce lien .
+
+Pour cela, nous avons commencé par une analyse exploratoire du jeu de données retrouvable sur steam_python.ipynb

@@ -6,7 +6,7 @@ Ensuite, nous avons décidé d'utiliser la même base de données mise à jour c
 
 La première question que nous posons c'est sur la structure du marché des jeux. L'idée est de faire une réduction de dimension via MCA sur des genres afin de trouver des axes latents expliquant le marché. Une fois que l'espace MCA était construit, nous avons appliqué des méthodes de clustering (Kmeans et AHC) pour trouver des groups des jeux dans le marché. Dans l'analyse, nous avons utilisé des graphs en 3D et les avons sauvegardés sous les fichier html pour visualiser la structure du marché ainsi que le résultat de clustering.
 
-La deuxième question porte sur le succès commercial des jeux. L'objectif est de construire et valider un score synthétique de succès combinant popularité (log_owners), 
+La deuxième question porte sur le succès commercial des jeux, dans le notebook 'success_commercial.ipynb'. L'objectif est de construire et valider un score synthétique de succès combinant popularité (log_owners), 
 recommandations (log_recommendations) et qualité perçue (wilson score). 
 
 Une fois le score construit, nous validons sa robustesse via un test de sensibilité aux pondérations et sa cohérence 

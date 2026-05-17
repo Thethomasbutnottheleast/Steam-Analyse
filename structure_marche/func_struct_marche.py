@@ -96,8 +96,6 @@ def plot_eta2_variables(eta2_df, dim_x=0, dim_y=1, title="Variables representati
     ax.set_xlabel(f"Dim {dim_x}")
     ax.set_ylabel(f"Dim {dim_y}")
     ax.set_title(title)
-
-    # optional: keep only positive quadrant if you want slide-like appearance
     ax.set_xlim(left=min(0, x.min() - 0.02))
     ax.set_ylim(bottom=min(0, y.min() - 0.02))
 
@@ -164,7 +162,7 @@ def show_contrib_cos2_mod(mca, data, top, top_n):
     
     top_rows = list(top_rows)
     
-    # optional: order rows by strongest value overall
+    #order rows by strongest value overall
     row_order = (
         pd.concat(
             [mat_cos2.loc[top_rows].max(axis=1), mat_contrib.loc[top_rows].max(axis=1)],
@@ -178,7 +176,6 @@ def show_contrib_cos2_mod(mca, data, top, top_n):
     mat_cos2_plot = mat_cos2.loc[row_order]
     mat_contrib_plot = mat_contrib.loc[row_order]
     
-    # --- plot side by side ---
     fig, axes = plt.subplots(
         1, 2, figsize=(16, max(6, 0.4 * len(row_order))), sharey=True
     )
@@ -239,9 +236,6 @@ def variable_contributions_from_modalities(mod_contrib, sep="_"):
     return var_contrib
 
 def select_modalities_by_axis(coords, cos2,dims=(0, 1),top_n=5):
-    '''
-    Choisir les modalités bien représentées
-    '''
     selected = set()
     for d in dims:
         selected.update(cos2[d].nlargest(top_n).index)
@@ -282,7 +276,6 @@ def plot_mca_coords(ind_coords=None, active_coords=None, supp_coords=None,
     # Axes
     ax.axhline(0, color='gray', linewidth=1)
     ax.axvline(0, color='gray', linewidth=1)
-
     ax.set_xlabel(f"Dimension {dim_x}")
     ax.set_ylabel(f"Dimension {dim_y}")
     ax.set_title(title if title else f"MCA coordinates: Dim {dim_x} vs Dim {dim_y}")

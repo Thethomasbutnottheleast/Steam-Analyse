@@ -146,7 +146,7 @@ def show_contrib_cos2_mod(mca, data, top, top_n):
     """
     Show the top contribution and cos2 of the modalities
     top : number of dimensions to show
-    top_n : number of top modalities with highest cos2 to show
+    top_n : number of top modalities with highest contrib and cos2 to show
     """
 
     contrib = mca.column_contributions_
